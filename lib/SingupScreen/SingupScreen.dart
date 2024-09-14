@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SingupScreen extends StatefulWidget {
-  const SingupScreen({super.key});
+  final String naem ;
+  const SingupScreen({super.key, required this.naem, });
 
   @override
   State<SingupScreen> createState() => _SingupScreenState();
@@ -11,7 +13,16 @@ class _SingupScreenState extends State<SingupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('SingupScreen')),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(onPressed: (){
+            Get.back();
+            Get.back();
+          }, child: Text('Go Back ')),
+          Center(child: Text('SingupScreen')),
+        ],
+      ),
     ); 
   }
 }
