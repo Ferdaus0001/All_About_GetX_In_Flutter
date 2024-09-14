@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'HomeScreen/HomeScreen.dart';
+import 'Lanagaung/languagesScreen.dart';
 
 void main(){
   runApp(Getxs());
@@ -20,11 +21,12 @@ class Getxs extends StatelessWidget{
   Widget build(BuildContext context) {
 
   return GetMaterialApp (
+translations: languagesScreen(),
+    locale: Locale('en_US'),
 
 
     debugShowCheckedModeBanner: false,
     color: Colors.blueGrey,
-    home: HomeScreen(),
     getPages: [
       GetPage(name: '/', page: ()=> HomeScreen()),
       GetPage(name: '/GetScreenOne', page: ()=>GetXScreenOne()),

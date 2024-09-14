@@ -26,14 +26,38 @@ class _HomeScreenState extends State<HomeScreen> {
             elevation: 2,
           ),
            body: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             crossAxisAlignment: CrossAxisAlignment.center,
              children: [
-               Container(
-                 color: Colors.red,
-                 child: Text('Contoner '),
-               // height: 300,
-               // width: 300,
-               height: Get.height *.5,
-                 width:Get.width *.6,
+             Card(
+               margin: EdgeInsets.all(22),
+               
+               elevation: 5,
+               child: ListTile(
+                 contentPadding: EdgeInsets.all(22),
+
+                 title: Text('Massages'.tr),
+                 subtitle:  Text('name'.tr),
+
+               
+               ),
+             ),
+               SizedBox(height: 11,),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+
+                   OutlinedButton(onPressed: (){
+                     Get.updateLocale(Locale('en_US'));
+                   }, child: Text('English ')),
+                   SizedBox(width: 16,),
+
+                   OutlinedButton(onPressed: (){
+                     Get.updateLocale(Locale('ur_PK'));
+                   }, child: Text('Urdu')),
+
+
+                 ],
                )
              ],
            ),
