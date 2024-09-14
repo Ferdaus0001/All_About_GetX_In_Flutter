@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'HomeScreen/HomeScreen.dart';
@@ -17,6 +18,7 @@ class Getxs extends StatelessWidget{
   Widget build(BuildContext context) {
 
   return GetMaterialApp (
+
     debugShowCheckedModeBanner: false,
     home: HomeScreen(),
   );
