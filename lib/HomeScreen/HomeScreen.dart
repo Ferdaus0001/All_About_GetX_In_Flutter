@@ -13,28 +13,31 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('GETX'),
-          backgroundColor: Colors.white10,
-          centerTitle: true,
-          titleSpacing: 1,
-          elevation: 2,
-        ),
-        body: Center(
+    final height = MediaQuery.of(context).size*1;
+    final width  = MediaQuery.of(context).size*1;
 
-          child: Column(
-
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-
-            children: [
-              TextButton(onPressed: (){
-                // Get.to(GetXScreenOne());
-                Get.toNamed('/GetScreenOne');
-              }, child: Text('Go To ',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),),
-            ],
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            title: Text('GETX'),
+            backgroundColor: Colors.white10,
+            centerTitle: true,
+            titleSpacing: 1,
+            elevation: 2,
           ),
-        ));
+           body: Column(
+             children: [
+               Container(
+                 color: Colors.red,
+                 child: Text('Contoner '),
+               // height: 300,
+               // width: 300,
+               height: Get.height *.5,
+                 width:Get.width *.6,
+               )
+             ],
+           ),
+          ),
+    );
   }
 }
