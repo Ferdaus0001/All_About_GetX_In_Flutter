@@ -18,6 +18,7 @@ class state_management extends StatefulWidget {
 
 class _state_managementState extends State<state_management> {
   final CountarContolar contolar = Get.put(CountarContolar());
+  double opacity = .5;
 
   @override
 
@@ -32,30 +33,20 @@ class _state_managementState extends State<state_management> {
         elevation: 4,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+
         children: [
-          Center(
-            child: Obx(() =>  Text(contolar.Counter.toString(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 33, color: Colors.blue)),
-            ),
-          ),
-          Expanded(child: ListView.builder(
-            itemCount: 2000,
-              itemBuilder: (context,index){
+          Container(height: 200 ,width: 200,color: Colors.blue.withOpacity(opacity),),
+           Slider(value: opacity, onChanged: (ferdaus ){
+          opacity = ferdaus;
+          setState(() {
 
-            return ListTile(
-              title: Text(index.toString()),
-            );
-          }))
+          });
+           })
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-         contolar.incrmentCounter();
-        },
-        child: Text('Count',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold,color: Colors.blue),),
 
       ),
+
+
     );
   }
 }
