@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import ' Getx state management/Getx state management.dart';
 import 'HomeScreen/HomeScreen.dart';
 import 'Lanagaung/languagesScreen.dart';
 
@@ -28,7 +29,7 @@ translations: languagesScreen(),
     debugShowCheckedModeBanner: false,
     color: Colors.blueGrey,
     getPages: [
-      GetPage(name: '/', page: ()=> HomeScreen()),
+      GetPage(name: '/', page: ()=> state_management()),
       GetPage(name: '/GetScreenOne', page: ()=>GetXScreenOne()),
       GetPage(name: '/GetScreenTwo', page: ()=>GetXScreenTwo()),
     ],
